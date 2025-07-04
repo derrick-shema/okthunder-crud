@@ -1,6 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from .routes.players import router as players_router
 from .db.database import create_db_and_tables
 
@@ -22,6 +23,8 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
+# Serving images
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
 # Providing the api to be accessed
 app.include_router(players_router)
 
