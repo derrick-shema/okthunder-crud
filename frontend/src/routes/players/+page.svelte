@@ -23,7 +23,7 @@
         goto('/players/new');
     }
     function goToPlayer(id: number) {
-        window.location.href = `/players/${id}`;
+        goto(`/players/${id}`);
     }
 </script>
 
