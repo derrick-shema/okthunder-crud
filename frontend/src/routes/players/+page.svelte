@@ -20,7 +20,7 @@
 
     function goToAddPlayer() {
         // Replace with your add player route
-        goto('/players/new');
+        goto('/players/create');
     }
     function goToPlayer(id: number) {
         goto(`/players/${id}`);
