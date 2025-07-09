@@ -4,7 +4,7 @@
 	let { children } = $props();
 </script>
 <body class="ml-8">
-	<header class="flex items-center justify-between px-8 py-4">
+	<header class="flex items-center justify-start px-8 py-4 gap-96">
 		<div class="flex items-center gap-4">
 			<img src="/okthunderlogo.png" alt="OKC Thunder Logo" width="100px" class="object-contain">
 			<span class="text-2xl font-bold">OKCThunder</span>
