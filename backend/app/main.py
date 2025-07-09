@@ -14,6 +14,12 @@ async def lifespan(app: FastAPI):
 # App startup
 app = FastAPI(lifespan=lifespan)
 
+# Serving images
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
+
+# Providing the api to be accessed
+app.include_router(players_router)
+
 # CORS Middleware to allow frontend access to api
 app.add_middleware(
     CORSMiddleware,
@@ -22,9 +28,4 @@ app.add_middleware(
     allow_methods=["*"], 
     allow_headers=["*"]
 )
-
-# Serving images
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
-# Providing the api to be accessed
-app.include_router(players_router)
 
